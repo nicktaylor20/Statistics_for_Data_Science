@@ -1,0 +1,66 @@
+---
+title: "Final Project Step 1"
+author: "Nick Taylor"
+date: "5/11/2021"
+output: 
+  html_document: default
+  word_document: default
+  pdf_document: default
+#bibliography: bibliography.bib
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+I am someone who enjoys eating. I love cooking food, watching cooking shows, and going out to try different cuisines. During the recent pandemic, the activity I missed the most was going to nice restaurant and enjoying a great meal. I am not alone in this enjoyment of eating outside of my home. On average Americans eat 4 to 5 commercially prepared meals per week. That is an average spending of 1,200 dollars a year per person. The restaurant industry in the US generates over $650 billion in revenue. Given that people in this country do not mind spending money on a good meal, one would think opening a restaurant would be a successful way to make earn a living? Well, for some it is, but for many their dreams and financial livelihood can be shattered quicker than it begun. 60% of new restaurants fail within the first year and 80% within the first 4 years. How is this possible? In a country that spends so much money on meals prepared outside the home why is opening, and maintaining a successful restaurant so hard? I will explore these questions and more to understand what factors lead to a failed restaurant. 
+
+
+## Research Questions
+-	Is location the largest element in the success or failure of a restaurant?
+-	What effect does cost, or pricing have on customer satisfaction?
+-	Do chain restaurants have a better chance of success than no chain eateries?
+-	Do good customer review ratings (star rating) lead to longer running restaurants?
+-	What is the effect of health inspection data to restaurant success?
+-	Is the type of cuisine served play a role in the success or failure rate?
+
+## Approach
+I will attempt to analyze and understand what are the major factors that lead to restaurant closures/failures. First, I will examine the role of location. A CNBC news article suggests the number 1 reason restaurants fail is simply the location. I will examine the location density of restaurants within my sample data to understand if densely populated areas are the best locations. Cost is also stated as being a leading factor to restaurant failures. I will explore the cost rating provided by Yelp to understand if cheaper restaurants have fewer closers and if they are rated differently by reviewers. The question I am most eager to dive into is chain restaurant closer/success rate vs non-chains. Would it be more beneficial for aspiring restaurant owners to explore the franchising option? Given the reviews, negative reputation, and even health violations do chain restaurant still have a better chance of succeeding? I will examine the restaurant and health inspection data to find an answer. Lastly, I will investigate if the type of cuisine served in a restaurant has any effect of success. Do restaurants that serve pizza or burgers have better reviews and longer operation time span than Thai or Italian eateries? 
+
+## Data
+The data I have selected is limited to the Boston Massachusetts area. I will be utilizing a dump of Yelp restaurant reviews/ratings, Boston restaurant licensing information, and Boston restaurant health inspection data. 
+
+[Yelp Data] (https://dataverse.harvard.edu/dataset.xhtml;jsessionid=0aaf09f348ec464d59fae77c42f2?persistentId=doi%3A10.7910%2FDVN%2FDMWCBT&version=&q=&fileTypeGroupFacet=%22Tabular+Data%22&fileAccess=)
+
+[Active Food Licenses Date] (https://data.boston.gov/dataset/active-food-establishment-licenses/resource/f1e13724-284d-478c-b8bc-ef042aa5b70b)
+
+[Food Inspection Data] (https://data.boston.gov/dataset/food-establishment-inspections/resource/4582bec6-2b4f-4f9e-bc55-cbaa73117f4c)
+
+[Food Inspection Plus Yelp review data] (https://dataverse.harvard.edu/dataset.xhtml;jsessionid=2f865fb293b5a7aab951f6b5986d?persistentId=doi%3A10.7910%2FDVN%2F6MUQKX&version=&q=&fileTypeGroupFacet=&fileAccess=)
+
+## Packages Reqired
+- ggplot2
+- knitr
+- QuantPsyc
+- dplyr
+- plyr
+- car
+- purrr
+
+
+
+## Question For Future Steps
+
+-	My biggest question/concern is when to utilize the statistical test that we have reviewed in week 8 and 9?
+  o	For example, when is the correct time to use a t-test vs an f-test or a chi-squared test?
+-	How to properly clean and transform my data using the R packages listed above
+  o	The datasets I have a large. Would it be better for me to fix them outside of R? 
+-	Is using a sample from only one area sufficient enough to make a sound judgement on critical factors that lead to restaurant loss?
+  o	Should I look for a broader dataset?
+
+
+
