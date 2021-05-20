@@ -1,0 +1,86 @@
+---
+title: "FinalProjectStep2"
+author: "Nick Taylor"
+date: "5/19/2021"
+output: 
+  html_document: default
+  word_document: default
+  pdf_document: default
+#bibliography: bibliography.bib
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## How to import and clean my data
+
+The data utilized for this project will be from .csv files. We have been working with CSVs through this course, so
+them import steps will be fairly straight forward. I will import the data into data frames using the "read.csv" function. 
+
+Since the data I am utilizing is in CSV format, I decided it would be easier to clean and examine the using Microsoft Excel. I know this may be looked as cheating, but It is just a lot easier to filter and correct the data using Excel. In the course we have used packages such as dplyr and plyr to examine data in R, but I thought it would be better to save a few lines of code and clean me data outside of R.
+For the data cleansing steps I preformed the below tasks. 
+-	Removed empty rows.
+o	I filtered my files and removed rows that were missing critical information such as restaurant name and address. If I do not have this information the rows of data are basically useless for this project
+-	Corrected data types
+o	This was mostly found in the restaurant name column. If the restaurant had a name with only numeric values, it was sometimes changed to a numeric data type.
+-	Removed unnecessary data columns
+o	Some of the columns in my datasets were completely irrelevant to this project (i.e. DBAName), so I removed the save space and time. 
+-	Corrected special character and null values
+o	In my Yelp review data, the price range for each restaurant was represented by dollor signs. I felt this was not good for the type of analysis I would be performing, so I switched them for numeric representations 1 dollar sign =1, 2 dollar sign =2, 3 dollar sign = 3, 4 dollar sign =4. I did not remove the null values, I instead replaced them with 0. 
+
+
+
+## What does the final data set look like
+
+Below are samples of my 3 datasets
+
+Yelp Review Dataset
+
+``````{r echo=FALSE}
+yelpReview_df <- read.csv("/Users/nickm/Documents/GitHub/dsc520/data/YELP_reviewdata.csv")
+head(yelpReview_df)
+```
+
+
+Inspection Plus Yelp Dataset
+
+``````{r echo=FALSE}
+inspection_df <- read.csv("/Users/nickm/Documents/GitHub/dsc520/data/FoodInspect_Yelp.csv")
+head(inspection_df)
+```
+
+Active Boston Restaurant Dataset
+
+``````{r echo=FALSE}
+activerest_df <- read.csv("/Users/nickm/Documents/GitHub/dsc520/data/Activerest.csv")
+head(activerest_df)
+```
+
+
+## Questions for the future
+
+I need to understand how to quickly access and update data using R packages. For this project, my datasets are all in CSV format, but I understand this may not always be the case. I need to get more comfortable to with using R packages to clean and examine my data
+
+## What information is not self-evident
+
+The major pieces of information that I need to get from this data is a correlation between restaurant success and if chain restaurants have a better success factor than non-chains. 
+
+## How do you plan to slice and dice the data
+
+The first step is to compare the yelp review data to the active restaurant data to get a list of restaurants that are no longer open. This is a major step in the success measurability of restaurants. I will use some R package to create this new list of “failed” restaurants. The next step is to create a data column that indicates a “chain” restaurant. I will need to collect the restaurant names that have more than 1 entry in the yelp/active restaurant list. These are the 2 major data manipulation steps that must happen to complete this project.
+
+## How could you summarize your data to answer key questions
+Key predictors such as review score, inspection infractions, and price rating can be summarized to understand the impact to restaurant success. They will also be utilized to examine the impact of chain restaurant closers/success. 
+
+## What types of plots and tables will help you to illustrate the findings to your questions
+- Distribution chart
+-	Scatter plot
+-	Matrix charts
+
+## Do you plan on incorporating any machine learning techniques to answer your research questions
+
+I plan to utilize what we have learned about general logistic regression models to attempt to predict if a restaurant is bound to close or not. I want to use review rating, cost, inspection violations and location as independent variables and analyze if any are strong predictors of restaurant closers. I would also like to examine the impact on chain establishments. 
+
